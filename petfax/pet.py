@@ -29,6 +29,8 @@ def create():
     else:
         return render_template("pets/create.html")
 
+#return to index route
+
 @bp.route('/<int:pet_id>/return')
 def return_to_index(pet_id):
-    return redirect(url_for('pets/index.html'))
+    return redirect(url_for('pet.index'))

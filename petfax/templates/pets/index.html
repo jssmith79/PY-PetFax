@@ -1,8 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Pets Index</title>
+</head>
+<body>
+    
+</body>
+</html>
 <body>
     <h1>Welcome to PetFax</h1>
     {% for pet in pets %}
         <h2><a href="{{ url_for('pet.show', pet_id=pet.id) }}">{{ pet.pet_name }}</a></h2>
-        <img src="{{ pet.pet_photo }}" alt="Photo of pet"/>
+        <div class="pet-photos">
+            <img src="{{ pet.pet_photo }}" alt="Photo of pet" width="250" height="250"/>
+        </div>
     {% endfor %}
+    <br>
+    <br>
     <a href="/pets/create">submit fun fact</a>
 </body>
